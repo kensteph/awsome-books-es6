@@ -1,27 +1,27 @@
 // Import my modules
 import { Library } from './modules/library.js';
-// let listBooks
-const listBooks = new Library();
+
+// My Libray
+const library = new Library();
 
 const removeBookFromDOM = (id) => {
   if (id !== -1) {
-    listBooks.removeBook(id);
+    library.removeBook(id);
   }
 };
 
 const form = document.querySelector('#form');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  listBooks.addBook();
+  library.addBook();
 });
 
-// listBooks.getDataFromLocalStorage();
-listBooks.getBooks();
+library.getBooks();
 removeBookFromDOM(-1);
 
 // ============================== NAVIGATION =====================
 
-function displayTime() {
+const displayTime = () => {
   const option = {
     month: 'long',
     year: 'numeric',
@@ -34,19 +34,19 @@ function displayTime() {
   date = date.replace(' at', ',');
   document.getElementById('date').innerHTML = date;
   setTimeout(displayTime, 1000);
-}
+};
 displayTime();
 
 // MENUS
 const listMenuLink = document.querySelector('#m-list a');
 const addMenuLink = document.querySelector('#m-add a');
 const contactMenuLink = document.querySelector('#m-contact a');
+
 // Get all the section
-const mainSection = document.querySelector('.main-section');
 const sections = document.querySelectorAll('section');
 const pageTitle = document.querySelector('#page-title');
 
-function displaySection(sectionToDisp) {
+const displaySection = (sectionToDisp) => {
   sections.forEach((section) => {
     // Active the related link
     if (sectionToDisp === 'book-list') {
@@ -75,4 +75,15 @@ function displaySection(sectionToDisp) {
       section.classList.add('hide-section');
     }
   });
-}
+};
+
+// Event on Menu Links
+listMenuLink.addEventListener('click', () => {
+  displaySection('book-list');
+});
+addMenuLink.addEventListener('click', () => {
+  displaySection('add-book');
+});
+contactMenuLink.addEventListener('click', () => {
+  displaySection('contact');
+});

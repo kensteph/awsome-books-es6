@@ -7,6 +7,67 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+/* HEADER SECTION */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  padding: 20px;
+  margin-top: 1px;
+}
+
+nav {
+  width: 50%;
+  min-width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px 2px 5px 20px;
+}
+
+nav span {
+  color: black;
+  font-weight: 700;
+}
+
+.menu-links {
+  display: flex;
+  list-style: none;
+}
+
+.menu-links li {
+  display: block;
+  padding: 7px;
+}
+
+.menu-links li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  transition: all 1s ease-in-out;
+}
+
+.active {
+  color: blue !important;
+}
+
+.rigth-border {
+  border-right: 2px solid black;
+}
+
+.date {
+  width: 50%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 2px 5px 20px;
+  font-weight: 600;
+}
+
 /* MAIN SECTION */
 .main-section {
   width: 100vw;
@@ -126,7 +187,7 @@ input {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 15px;
+  margin: 15px;
 }
 
 .contact-list {
@@ -136,67 +197,6 @@ input {
 /* Empty Library */
 .empty-libray {
   margin-left: 10px;
-}
-
-/* HEADER SECTION */
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-  padding: 20px;
-  margin-top: 1px;
-}
-
-nav {
-  width: 50%;
-  min-width: 350px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 10px 2px 5px 20px;
-}
-
-nav span {
-  color: black;
-  font-weight: 700;
-}
-
-.menu-links {
-  display: flex;
-  list-style: none;
-}
-
-.menu-links li {
-  display: block;
-  padding: 7px;
-}
-
-.menu-links li a {
-  text-decoration: none;
-  color: black;
-  font-weight: 700;
-  transition: all 2s ease-in-out;
-}
-
-.active {
-  color: blue !important;
-}
-
-.rigth-border {
-  border-right: 2px solid black;
-}
-
-.date {
-  width: 50%;
-  margin-top: 5px;
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 2px 5px 20px;
-  font-weight: 600;
 }
 
 /* FOOTER */

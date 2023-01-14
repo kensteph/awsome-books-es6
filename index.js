@@ -43,25 +43,25 @@ const listMenuLink = document.querySelector('#m-list a');
 const addMenuLink = document.querySelector('#m-add a');
 const contactMenuLink = document.querySelector('#m-contact a');
 
-// Get all the section
-const sections = document.querySelectorAll('section');
-const pageTitle = document.querySelector('#page-title');
-
 const displaySection = (sectionToDisp) => {
+  // Get all the section
+  const sections = document.querySelectorAll('section');
+  const pageTitle = document.querySelector('#page-title');
+
   sections.forEach((section) => {
     // Active the related link
     if (sectionToDisp === 'book-list') {
-      pageTitle.style.display = 'block';
+      pageTitle.innerHTML = 'All awesome books';
       listMenuLink.classList.add('active');
       addMenuLink.classList.remove('active');
       contactMenuLink.classList.remove('active');
     } else if (sectionToDisp === 'add-book') {
-      pageTitle.style.display = 'none';
+      pageTitle.innerHTML = 'Add a new book';
       addMenuLink.classList.add('active');
       listMenuLink.classList.remove('active');
       contactMenuLink.classList.remove('active');
     } else {
-      pageTitle.style.display = 'none';
+      pageTitle.innerHTML = 'Contact information';
       contactMenuLink.classList.add('active');
       addMenuLink.classList.remove('active');
       listMenuLink.classList.remove('active');

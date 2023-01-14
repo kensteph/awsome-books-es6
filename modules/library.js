@@ -1,9 +1,10 @@
-import { Storage } from './storage.js';
-import { Book } from './book.js';
-export class Library {
+// eslint-disable-next-line no-multi-spaces
+import Storage from './storage.js';
+import Book from './book.js';
+
+export default class Library {
   constructor() {
     this.books = [];
-    this.storage = new Storage();
   }
 
   addBook() {
@@ -16,7 +17,7 @@ export class Library {
     if (bookTitle.trim().length !== 0 && bookAuthor.trim().length !== 0) {
       const objBook = new Book(bookTitle, bookAuthor);
       this.books.push(objBook);
-      this.storage.saveToLocalStorage(this.books);
+      Storage.saveToLocalStorage(this.books);
       this.getBooks();
       form.reset();
       document.getElementById('msg-add-book').innerHTML = 'New book added...';
@@ -28,8 +29,8 @@ export class Library {
 
   getBooks() {
     const section = document.querySelector('#book-list');
-    this.books = this.storage.getDataFromLocalStorage();
-    let books = `<table>`;
+    this.books = Storage.getDataFromLocalStorage();
+    let books = '<table>';
     this.books.forEach((book, index) => {
       books += `<tr>
       <td>
@@ -42,8 +43,7 @@ export class Library {
     `;
     });
     if (this.books.length === 0) {
-      books +=
-        '<tr><td colspan="2" <p class="empty-libray">Library is empty...</p></td></tr>';
+      books += '<tr><td colspan="2" <p class="empty-libray">Library is empty...</p></td></tr>';
     }
     books += '</table>';
     section.innerHTML = books;
@@ -52,7 +52,7 @@ export class Library {
   removeBook(bookId) {
     const filteredBooks = this.books.filter((book, index) => bookId !== index);
     this.books = filteredBooks;
-    this.storage.saveToLocalStorage(this.books);
+    Storage.saveToLocalStorage(this.books);
     this.getBooks();
   }
 }

@@ -1,5 +1,6 @@
 // Import my modules
 import { Library } from './modules/library.js';
+import { DateTime } from './modules/luxon.js';
 
 // My Libray
 const library = new Library();
@@ -22,17 +23,17 @@ removeBookFromDOM(-1);
 // ============================== NAVIGATION =====================
 
 const displayTime = () => {
-  const option = {
+  const date = DateTime.now();
+  var format = {
     month: 'long',
     year: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
     second: 'numeric',
   };
-  let today = new Date();
-  let date = today.toLocaleString('en-US', option);
-  date = date.replace(' at', ',');
-  document.getElementById('date').innerHTML = date;
+  let dateDisplay = date.setLocale('en-US').toLocaleString(format); //=> 'September 14'
+  dateDisplay = dateDisplay.replace(' at', ',');
+  document.getElementById('date').innerHTML = dateDisplay;
   setTimeout(displayTime, 1000);
 };
 displayTime();

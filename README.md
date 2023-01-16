@@ -22,7 +22,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -90,7 +89,7 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-npm i
+You should have node install on your local machine
 
 ### Setup
 
@@ -107,29 +106,14 @@ Example commands:
 
 ### Install
 
-Install this project with:
+Install the luxon.js package:
 
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
-```
---->
+npm i
 
 ### Usage
 
 To run the project, execute the following command:
 Open the index.html file in a web browser
-
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
 
 ### Run tests
 
@@ -160,19 +144,11 @@ To run the ESLint linter
 You can deploy this project using:
 -Go to the main folder of the project and double-click on the index.html file.
 
-<!--
-Example:
-
-```sh
-
-```
- -->
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 👤 **Kender Romain**
 
 - GitHub: [@Kensteph](https://github.com/kensteph)

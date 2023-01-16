@@ -1,14 +1,27 @@
 // Import my modules
 import Library from './modules/library.js';
-import { DateTime } from './modules/luxon.min.js';
+import Storage from './modules/storage.js';
+import { DateTime } from './node_modules/luxon/src/luxon.js';
 
 // My Libray
 const library = new Library();
 
-const removeBookFromDOM = (id) => {
-  if (id !== -1) {
-    library.removeBook(id);
-  }
+const removeBookFromDOM = () => {
+  const section = document.querySelector('#book-list');
+  section.addEventListener('click', (event) => {
+    const { target } = event;
+    // If the target is a button
+    if (target.type === 'button') {
+      // Now we can remove this book from the DOM and storage
+      const { id } = target;
+      // 1- Target his parents
+      const parents = target.parentElement.parentElement.parentElement;
+      // Remove parents
+      parents.remove();
+      // Remove it in the storage
+      Storage.removeBook(id);
+    }
+  });
 };
 
 const form = document.querySelector('#form');
@@ -18,7 +31,7 @@ form.addEventListener('submit', (event) => {
 });
 
 library.getBooks();
-removeBookFromDOM(-1);
+removeBookFromDOM();
 
 // ============================== NAVIGATION =====================
 

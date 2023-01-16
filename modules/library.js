@@ -35,7 +35,7 @@ export default class Library {
       <td>
         <article class="book">
           <p>"${book.title}" by ${book.author}</p>
-          <button type="button" id="${index}" class="btn remove-btn" onclick="removeBookFromDOM(${index})">Remove</button>
+          <button type="button" id="${index}" class="btn remove-btn">Remove</button>
         </article>
       </td>
     </tr>
@@ -48,7 +48,7 @@ export default class Library {
     section.innerHTML = books;
   }
 
-  removeBook(bookId) {
+  static removeBook(bookId) {
     const filteredBooks = this.books.filter((book, index) => bookId !== index);
     this.books = filteredBooks;
     Storage.saveToLocalStorage(this.books);

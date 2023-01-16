@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-multi-spaces
 import Storage from './storage.js';
 import Book from './book.js';
 
